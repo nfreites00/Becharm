@@ -368,12 +368,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 746282920}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60362eb0a45703848bea3f3b61bc5af9, type: 3}
+  m_Script: {fileID: 11500000, guid: edb0116aa07d89f488ed52d7b6e2b7af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 395372151}
   speed: 1
-  distance: 0
 --- !u!212 &746282922
 SpriteRenderer:
   m_ObjectHideFlags: 0

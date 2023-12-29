@@ -8,6 +8,12 @@ using UnityEngine;
     component to the player and takes in input
     horizontally and vertically to move the
     character.
+
+    The script also allows for the player to
+    rotate using the mouse. The player can
+    aim the charm "weapon" using the mouse
+    position as the "weapon" will shoot 
+    automatically.
 */
 
 public class PlayerMovement : MonoBehaviour
@@ -17,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed = 10.0f;
 
     Vector2 movement;
+    Vector2 mousePosition;
 
     // Start is called before the first frame update
     void Start()
@@ -30,10 +37,16 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         movement = movement.normalized;
+
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void FixedUpdate()
     {
         player.MovePosition(player.position + movement * movementSpeed * Time.fixedDeltaTime);
+
+        Vector2 lookDirection = mousePosition- player.position;
+        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
+        player.rotation = angle;
     }
 }

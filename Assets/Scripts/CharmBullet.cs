@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * This script 
+ */
+
 public class CharmBullet : MonoBehaviour
 {
     // public GameObject hitEffect;

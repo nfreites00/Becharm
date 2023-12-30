@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/BrandonTest.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/MenuScene.unity
+    guid: f9474447942c9dc44a465d18922e570d
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity
+    guid: d7ed6891a5f31934d9db9e1cc741b17c
   m_configObjects: {}

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 14009172857366696}
   - component: {fileID: 1529792081946784255}
   - component: {fileID: -1064321236766575054}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Enemy3_slowspeed (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}

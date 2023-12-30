@@ -14,9 +14,12 @@ public class PlayerHealth : MonoBehaviour
     [HideInInspector] public float maxHealth;
     [SerializeField] PlayerMovement playerMovement;
 
+    public GameManager gameManager;
+
     private void Start()
     {
         maxHealth = health;
+        playerMovement.enabled = true;
     }
 
     /*
@@ -39,6 +42,7 @@ public class PlayerHealth : MonoBehaviour
         {
             playerMovement.enabled = false;
             StartCoroutine(DelayDeath());
+            gameManager.GameOver();
         }
     }
 

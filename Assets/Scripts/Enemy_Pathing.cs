@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Scripting.APIUpdating;
 
 public class Enemy_Pathing : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class Enemy_Pathing : MonoBehaviour
         if (distanceFromPlayer < lineOfSite)
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player.position, speed * Time.deltaTime);
+            
         }
     }
 

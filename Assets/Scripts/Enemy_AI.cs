@@ -7,9 +7,10 @@ using static UnityEngine.GraphicsBuffer;
 public class Enemy_AI : MonoBehaviour
 {
     public float speed;
-    public float damage;
+    //public float damage;
     private float distance;
 
+    public float damage;
     [SerializeField] private float enemyHealth;
     [SerializeField] private float enemyMaxHealth;
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,7 +21,7 @@ public class CharmBullet : MonoBehaviour
         //    Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
         //}
 
-        if(collision.gameObject.TryGetComponent<Enemy_AI>(out Enemy_AI enemy))
+        if(collision.gameObject.TryGetComponent(out EnemyHealth enemy))
         {
             enemy.DamageTaken(damage);
         }

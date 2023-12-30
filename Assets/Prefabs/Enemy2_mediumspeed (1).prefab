@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6532473064478127782}
   - component: {fileID: 2200352850560852204}
   - component: {fileID: 7821955059327570462}
+  - component: {fileID: -6670972184197686636}
   m_Layer: 3
   m_Name: Enemy2_mediumspeed (1)
   m_TagString: Enemy
@@ -178,6 +179,23 @@ MonoBehaviour:
   fireRate: 2
   bullet: {fileID: 6379559873788917329, guid: 07820417f3afa88489ae17e42a4f90b2, type: 3}
   bulletParent: {fileID: 5755173147070994347}
+--- !u!114 &-6670972184197686636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057217344270010641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb0116aa07d89f488ed52d7b6e2b7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  enemyHealth: 0
+  enemyMaxHealth: 1
+  playerHealth: {fileID: 0}
+  target: {fileID: 0}
 --- !u!1 &5755173147070994347
 GameObject:
   m_ObjectHideFlags: 0

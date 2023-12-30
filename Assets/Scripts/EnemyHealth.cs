@@ -4,26 +4,31 @@ using System.Numerics;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class Enemy_AI : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
+    /*
     public float speed;
     //public float damage;
     private float distance;
+    */
 
     public float damage;
-    [SerializeField] private float enemyHealth;
-    [SerializeField] private float enemyMaxHealth;
+    [SerializeField] public float enemyHealth;
+    [SerializeField] public float enemyMaxHealth;
 
-    public GameObject player;
+    //public GameObject player;
     [SerializeField] PlayerHealth playerHealth;
+    public GameObject target;
 
     // Start is called before the first frame update
     void Start()
     {
         enemyHealth = enemyMaxHealth;
+        target = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
+    /*
     void Update()
     {
         distance = UnityEngine.Vector2.Distance(transform.position, player.transform.position);        
@@ -35,16 +40,18 @@ public class Enemy_AI : MonoBehaviour
         transform.rotation = UnityEngine.Quaternion.Euler(UnityEngine.Vector3.forward * angle);
         
     }
+    */
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if ((collision.gameObject.CompareTag("Enemy")) || (collision.gameObject.CompareTag("Bullet")))
+        if ((collision.gameObject.CompareTag("Enemy")) || (collision.gameObject.CompareTag("EnemyBullet")))
         {
             Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
         }
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            player.GetComponent <PlayerHealth>().health -= damage;
+            target.GetComponent<PlayerHealth>().health -= damage;
         }
     }
 
@@ -54,6 +61,8 @@ public class Enemy_AI : MonoBehaviour
 
         if (enemyHealth <= 0)
         {
+            UIManager.UIManagerInstance.charmCount++;
+            UIManager.UIManagerInstance.UpdateCharmCounterUI();
             Destroy(gameObject);
         }    
     }

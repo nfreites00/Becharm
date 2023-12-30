@@ -28,7 +28,7 @@ public class Bullet_Script : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if ((collision.gameObject.CompareTag("Enemy")) || (collision.gameObject.CompareTag("Bullet")))
+        if ((collision.gameObject.CompareTag("Enemy")) || (collision.gameObject.CompareTag("EnemyBullet")))
         {
             Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
         }

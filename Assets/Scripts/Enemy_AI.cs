@@ -10,13 +10,16 @@ public class Enemy_AI : MonoBehaviour
     public float damage;
     private float distance;
 
+    [SerializeField] private float enemyHealth;
+    [SerializeField] private float enemyMaxHealth;
+
     public GameObject player;
-    [SerializeField] Health playerHealth;
+    [SerializeField] PlayerHealth playerHealth;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        enemyHealth = enemyMaxHealth;
     }
 
     // Update is called once per frame
@@ -40,7 +43,17 @@ public class Enemy_AI : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            player.GetComponent < Health>().health -= damage;
+            player.GetComponent <PlayerHealth>().health -= damage;
         }
+    }
+
+    public void DamageTaken(float damageAmount)
+    {
+        enemyHealth -= damageAmount;
+
+        if (enemyHealth <= 0)
+        {
+            Destroy(gameObject);
+        }    
     }
 }

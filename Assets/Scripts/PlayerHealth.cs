@@ -7,7 +7,7 @@ using UnityEngine.UI;
  * This script manages the health.
  */
 
-public class Health : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     public Image healthBar;
     public float health;

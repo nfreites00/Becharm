@@ -9,7 +9,7 @@ public class Bullet_Script : MonoBehaviour
 
     Rigidbody2D bulletRB;
     [SerializeField] GameObject target;
-    [SerializeField] Health playerHealth;
+    [SerializeField] PlayerHealth playerHealth;
 
 
     // Start is called before the first frame update
@@ -35,7 +35,7 @@ public class Bullet_Script : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            target.GetComponent<Health>().health -= damage;
+            target.GetComponent<PlayerHealth>().health -= damage;
             Destroy(gameObject);
         }
     }

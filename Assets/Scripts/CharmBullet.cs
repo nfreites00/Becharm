@@ -14,6 +14,11 @@ public class CharmBullet : MonoBehaviour
     {
         // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         // Destroy(effect, 4f);
+        if(collision.gameObject.CompareTag("Bullet"))
+        {
+            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
+        }
+
         Destroy(gameObject);
     }
 

@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Enemy_AI : MonoBehaviour
 {
-    public GameObject player;
     public float speed;
-
+    public float damage;
     private float distance;
+
+    public GameObject player;
+    [SerializeField] Health playerHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -27,5 +30,17 @@ public class Enemy_AI : MonoBehaviour
         transform.position = UnityEngine.Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
         transform.rotation = UnityEngine.Quaternion.Euler(UnityEngine.Vector3.forward * angle);
         
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if ((collision.gameObject.CompareTag("Enemy")) || (collision.gameObject.CompareTag("Bullet")))
+        {
+            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
+        }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            player.GetComponent < Health>().health -= damage;
+        }
     }
 }

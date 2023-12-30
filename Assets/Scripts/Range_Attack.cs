@@ -12,9 +12,10 @@ public class Range_Attack : MonoBehaviour
     public float shootingRange;
     public float fireRate = 1f;
     private float nextFireTime;
+
+    private Transform player;
     public GameObject bullet;
     public GameObject bulletParent;
-    private Transform player;
 
     void Start()
     {
